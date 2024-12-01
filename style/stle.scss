@@ -1,0 +1,281 @@
+$Raleway:"Raleway", sans-serif;
+$Cardo:"Cardo", serif;
+$color-text:#fff;
+$color-button: #ff4343;
+$color-border: #babbc5;
+$color-title: #2D3033;
+$color-icons: #6C7279;
+
+@mixin font($fontSize, $lineHeight, $fontWeight, $color){
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    color: $color;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $Raleway;
+    position: relative;
+}
+.container {
+    max-width: 1210px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @media screen and(max-width: 1024px) {
+        max-width: 984px;
+    }
+}
+.banner{
+    padding: 230px 0;
+    background: url(../images/bgimg.png) center/cover no-repeat;
+    position: relative;
+
+    @media screen and (max-width: 1024px) {
+        padding: 257px 0 126px;
+        margin-bottom: 78px;
+    }
+
+    @media screen and (max-width: 767px){
+        padding: 106px 0 52px;
+        margin-bottom: 40px;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #252B49, $alpha: 0.8);
+    }
+
+    &__container {
+        position: relative;
+        text-align: center
+    }
+
+    &__title {
+        @include font(64px, 75px, 900, $color-text);
+        text-transform: uppercase;
+        margin-bottom: 31.43px;
+
+        @media screen and (max-width: 1024px) {
+            @include font(48px, 56px, 900, $color-text);
+            margin-bottom: 61.86px;
+        }
+
+        @media screen and (max-width: 767px){
+            @include font(36px, 42px, 900, $color-text);
+            margin-bottom: 32.71px;
+        }
+    }
+
+    &__text {
+        @include font(24px, 28px, 400, $color-text);
+        max-width: 999px;
+        width: 100%;
+        margin: 0 auto;
+        @media screen and (max-width: 1072px) {
+            max-width: 860px;
+        }
+        @media screen and (max-width: 1024px) {
+            @include font(18px, 21px, 400, $color-text);
+        }
+        @media screen and (max-width: 1072px) {
+            max-width: 680px;
+        }
+        @media screen and (max-width: 767px){
+            @include font(14px, 16px, 400, $color-text);
+        }
+        @media screen and (max-width: 621px) {
+            max-width: 487px;
+        }
+    }
+
+    &__button {
+        margin-top: 79.57px;
+        max-width: 370px;
+        width: 100%;
+        background-color: $color-button;
+        @include font(24px, 28px, 900, $color-text);
+        text-transform: uppercase;
+        padding: 26px 5px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #E71414;
+        }
+
+        &:active {
+            background-color: $color-button;
+            box-shadow: 4px 4px 30px 0 $color-button;
+        }
+
+        @media screen and (max-width: 1024px) {
+            margin-top: 89.14px;
+            max-width: 314px;
+        }
+
+        @media screen and (max-width: 767px){
+            margin-top: 49.29px;
+            max-width: 767px;
+            padding: 16px 5px;
+        }
+    }
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+        padding: 19px 0;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+        border-bottom: 1px solid $color-border;
+
+        @media screen and (max-width: 1024px) {
+            // max-width: 984px;
+        }
+
+        @media screen and (max-width: 767px) {
+            border-bottom: none;
+            align-items: center;
+        }
+    }
+
+    &__wrapper-icon {
+        display: flex;
+        max-width: 183.86px;
+        width: 100%;
+
+        & svg {
+            @media screen and (max-width: 767px) {
+                max-width: 103.47px;
+            }
+        }
+    }
+
+    &__nav {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        list-style: none;
+    }
+
+    &__nav-item {
+        min-width: 134px;
+        text-align: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        &:hover::before{
+            background-color: $color-border;
+        }
+
+        &:active::before {
+            background-color: #E71414;
+        }
+        .header__nav-link:active {
+            color: #E71414;
+        }
+
+        @media screen and (max-width: 1024px) {
+            min-width: 112px;
+        }
+
+        @media screen and (max-width: 810px) {
+            min-width: max-content;
+            padding: 0 10px;
+        }
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        @include font(13px, 15px, 700, $color-text);
+        text-transform: uppercase;
+        padding-top: 36px;
+        padding-bottom: 35px;
+        display: block;
+
+        @media screen and (max-width: 1024px) {
+            @include font(12px, 14px, 700, $color-text);
+        }
+    }
+
+    &__menu {
+        display: none;
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 18px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+    border-bottom: 1px solid #babbc5;
+}
+.header__logo{
+    max-width: 183px;
+    display: flex;
+    width: 100%;
+}
+.header__nav-list{
+    display: flex;
+    list-style: none;
+}
+.header__nav-item{
+   min-width: 134px;
+   padding-top: 36px;
+   padding-bottom: 32px;
+   border-bottom: 3px solid transparent;
+   text-align: center;
+   position: relative; 
+}
+
+
+   
+
+
+
