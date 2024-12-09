@@ -32,7 +32,7 @@ body{
     }
 }
 .banner{
-    padding: 230px 0;
+    padding: 230px 0 120px;
     background: url(../images/bgimg.png) center/cover no-repeat;
     position: relative;
 
@@ -110,6 +110,9 @@ body{
         padding: 26px 5px;
         border: none;
         cursor: pointer;
+        transition: all 0.5s linear;
+        position: relative;
+        z-index: 0;
 
         &:hover {
             background-color: #E71414;
@@ -561,7 +564,15 @@ body{
         }
     }
 }
-
+.bg {
+    margin-bottom: 125px;
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 86px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-bottom: 46px;
+    }
+}
 .swiper {
     width: 100%;
     margin-bottom: 125px;
@@ -665,6 +676,9 @@ body{
         @media screen and (max-width: 1024px) {
             @include font(12px, 14px, 700, $color-text);
         }
+        @media screen and (max-width: 767px) {
+            font-size: 12.5px;
+    }
     }
 }
 
