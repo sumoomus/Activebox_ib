@@ -5,6 +5,7 @@ $color-button: #ff4343;
 $color-border: #babbc5;
 $color-title: #2D3033;
 $color-icons: #6C7279;
+$color-features: #000000;
 
 @mixin font($fontSize, $lineHeight, $fontWeight, $color){
     font-size: $fontSize;
@@ -21,13 +22,16 @@ body{
     font-family: $Raleway;
     position: relative;
 }
+path{
+    transition: fill .3s linear;
+}
 .container {
     max-width: 1210px;
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
 
-    @media screen and(max-width: 1024px) {
+    @media screen and (max-width: 1024px) {
         max-width: 984px;
     }
 }
@@ -35,6 +39,7 @@ body{
     padding: 230px 0 120px;
     background: url(../images/bgimg.png) center/cover no-repeat;
     position: relative;
+    margin-bottom: 70px;
 
     @media screen and (max-width: 1024px) {
         padding: 257px 0 126px;
@@ -96,7 +101,7 @@ body{
             @include font(14px, 16px, 400, $color-text);
         }
         @media screen and (max-width: 621px) {
-            max-width: 487px;
+            max-width: 100%;
         }
     }
 
@@ -130,7 +135,7 @@ body{
 
         @media screen and (max-width: 767px){
             margin-top: 49.29px;
-            max-width: 767px;
+            max-width: 100%;
             padding: 16px 5px;
         }
     }
@@ -143,7 +148,27 @@ body{
     left: 0;
     z-index: 1;
     width: 100%;
-
+    .header__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+        
+    }
+    .header__logo{
+        max-width: 183px;
+        display: flex;
+        width: 100%;
+    }
+    .header__nav-list{
+        display: flex;
+        list-style: none;
+    }
+    .header__nav-item{
+       min-width: 134px;
+       text-align: center;
+       position: relative; 
+    }
     @media screen and (max-width: 767px) {
         padding: 19px 0;
     }
@@ -202,6 +227,7 @@ body{
             position: absolute;
             bottom: 0;
             left: 0;
+            transition: all 0.5s linear;
         }
         &:hover::before{
             background-color: $color-border;
@@ -231,6 +257,7 @@ body{
         padding-top: 36px;
         padding-bottom: 35px;
         display: block;
+        transition: color 0.5s linear;
 
         @media screen and (max-width: 1024px) {
             @include font(12px, 14px, 700, $color-text);
@@ -252,33 +279,11 @@ body{
         }
     }
 }
-.header__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 30px;
-    border-bottom: 1px solid #babbc5;
-}
-.header__logo{
-    max-width: 183px;
-    display: flex;
-    width: 100%;
-}
-.header__nav-list{
-    display: flex;
-    list-style: none;
-}
-.header__nav-item{
-   min-width: 134px;
-   padding-top: 36px;
-   padding-bottom: 32px;
-   border-bottom: 3px solid transparent;
-   text-align: center;
-   position: relative; 
-}
+
 
 .icons {
     margin-bottom: 136px;
+    text-align: center;
     @media screen and (max-width: 1024px) {
         margin-bottom: 80px;
     }
@@ -286,14 +291,13 @@ body{
         margin-bottom: 35px;
     }
 
-    &__container {
+    .icons__container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 31px;
         row-gap: 89px;
 
         @media screen and (max-width: 1024px) {
-            margin-bottom: 80px;
             column-gap: 20px;
             row-gap: 54px;
         }
@@ -355,11 +359,11 @@ body{
     }
 
     &__text {
-        @include font(18px, 21px, 400, $color-features);
+        @include font (18px, 21px, 400, $color-features);
         text-align: center;
 
         @media screen and (max-width: 1024px) {
-            @include font(14px, 16px, 400, $color-features);
+            @include font (14px, 16px, 400, $color-features);
         }
     }
 }
@@ -539,6 +543,7 @@ body{
         align-items: center;
         border: 1px solid #C6CBCD;
         transition: all 0.3s linear;
+        cursor: pointer;
         &:hover path{
             fill: #E71414;
             transition: all 0.3s linear;
@@ -684,7 +689,7 @@ body{
 
 .download {
     text-align: center;
-    padding-bottom: 113px;
+    margin-bottom: 113px;
     @media screen and (max-width: 1024px) {
         padding-bottom: 78px;
     }
@@ -700,9 +705,8 @@ body{
         }
         @media screen and (max-width: 767px) {
             @include font(18px, 21px, 500, #000000);
-            max-width: 280px;
+            max-width: 100%;
             width: 100%;
-            margin: 0 auto 19px;
         }
     }
 
@@ -722,7 +726,7 @@ body{
 
     &__btn {
         margin-top: 47.71px;
-        max-width: 370px;
+        max-width: 100%;
         width: 100%;
         background-color: $color-button;
         @include font(21px, 28px, 900, $color-text);
@@ -885,14 +889,21 @@ body{
                 width: 100%;
                 margin: 0 auto;  
             }
-            
         }
     }
-
-    &__container-copyright {
+    .footer__copyright{
         background-color: #2C3154;
         padding: 24px 0;
-        text-align: center;
+    }
+    &__container-copyright {
+        
+        
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        
+        
         @media screen and (max-width: 1024px) {
             padding: 14px 0;
         }
@@ -901,9 +912,7 @@ body{
         }
 
         .footer__copyright-text {
-            max-width: 370px;
-            width: 100%;
-            margin: 0 auto;
+            text-align: center;
             text-transform: capitalize;
             @include font(18px, 21px, 400, #808080);
             @media screen and (max-width: 1024px) {
@@ -911,7 +920,7 @@ body{
                 @include font(14px, 16px, 400, #808080);
             }
             @media screen and (max-width: 767px){
-                max-width: 280px;
+                max-width: 100%;
             }
         }
         .footer__copyright-text span {
