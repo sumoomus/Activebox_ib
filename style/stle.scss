@@ -30,10 +30,6 @@ path{
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-
-    @media screen and (max-width: 1024px) {
-        max-width: 984px;
-    }
 }
 .banner{
     padding: 230px 0 120px;
@@ -148,23 +144,23 @@ path{
     left: 0;
     z-index: 1;
     width: 100%;
-    .header__container{
+    &__container{
         display: flex;
         justify-content: space-between;
         align-items: center;
         column-gap: 30px;
         
     }
-    .header__logo{
+    &__header__logo{
         max-width: 183px;
         display: flex;
         width: 100%;
     }
-    .header__nav-list{
+    &__header__nav-list{
         display: flex;
         list-style: none;
     }
-    .header__nav-item{
+    &__header__nav-item{
        min-width: 134px;
        text-align: center;
        position: relative; 
@@ -303,7 +299,6 @@ path{
         }
 
         @media screen and (max-width: 767px) {
-            margin-bottom: 35px;
             grid-template-columns: 1fr;
             row-gap: 41.46px;
         }
@@ -361,6 +356,7 @@ path{
     &__text {
         @include font (18px, 21px, 400, $color-features);
         text-align: center;
+        font-family: $Raleway;
 
         @media screen and (max-width: 1024px) {
             @include font (14px, 16px, 400, $color-features);
@@ -691,10 +687,10 @@ path{
     text-align: center;
     margin-bottom: 113px;
     @media screen and (max-width: 1024px) {
-        padding-bottom: 78px;
+        margin: 78px;
     }
     @media screen and (max-width: 767px) {
-        padding-bottom: 45px;
+        margin: 45px;
     }
 
     &__title{
@@ -718,9 +714,9 @@ path{
         }
         @media screen and (max-width: 767px) {
             @include font(13px, 15px, 700, #000000);
-            max-width: 279px;
-            width: 100%;
-            margin: 0 auto;
+            margin-top: 49.29px;
+            max-width: 100%;
+            padding: 16px 5px;
         }
     }
 
